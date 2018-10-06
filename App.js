@@ -4,12 +4,20 @@
  *
  * @format
  * @flow
- *  
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Image} from 'react-native';
-import Judul from './Components/Judul';
+import {Platform, StyleSheet, Text, View} from 'react-native';
+import Judul from './components/judul';
+import Login from './components/login';
+import Footer from './components/footer';
+
+const instructions = Platform.select({
+  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
+  android:
+    'Double tap R on your keyboard to reload,\n' +
+    'Shake or press menu button for dev menu',
+});
 
 type Props = {};
 export default class App extends Component<Props> {
@@ -17,10 +25,8 @@ export default class App extends Component<Props> {
     return (
       <View style={styles.container}>
         <Judul/>
-        <Text style={styles.welcome}>Nama : Reza Dwi Andrianto</Text>
-        <Text style={styles.instructions}>Kelas : XI RPL 1</Text>
-        <Text style={styles.instructions}>No Absen : 29</Text>
-        <Image source={require('./69.png')} style={{width: 400, height: 400}} />
+        <Login/>
+        <Footer/>
       </View>
     );
   }
@@ -31,7 +37,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#1f1f22',
   },
   welcome: {
     fontSize: 20,
@@ -39,8 +45,8 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   instructions: {
-    fontSize: 20,
     textAlign: 'center',
-    margin: 10,
+    color: '#f50',
+    marginBottom: 5,
   },
 });

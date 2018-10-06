@@ -1,19 +1,13 @@
 import React, {Component} from 'react';
-import {Text} from 'react-native';
+import {StyleSheet, View, Text, Image} from 'react-native';
 
-class Judul extends Component {
-	render(){
-		return (
-			<Text style={salon.judul}>BIODATA</Text>
-		)
-	}
+class Judul extends Component{
+	 render() {
+    return (
+      <Image style={{width:200, height:200}} 
+        source={require('../src/images/faceit.png')}/>
+    )
+  }
 }
-const salon = {
-	judul: {
-		color: '#f00',
-		fontSize: 50,
-		fontWeight: 'bold',
-		backgroundColor: '#0f0'
-	}
-}
+
 export default Judul;
